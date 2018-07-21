@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">ConstraintLayoutDemo</string>
+
+    <string name="text_pokemon_ability">特性</string>
+    <string name="text_special_ability">特殊特性</string>
+    <string name="text_pokemon_property">属性</string>
+    <string name="text_pokemon_race_value">种族值</string>
+    <string name="text_pokemon_hp_value">HP</string>
+    <string name="text_pokemon_attack_value">攻击</string>
+    <string name="text_pokemon_defense_value">防御</string>
+    <string name="text_special_attack_value">特攻</string>
+    <string name="text_special_defense_value">特防</string>
+    <string name="text_pokemon_speed_value">速度</string>
+
+</resources>

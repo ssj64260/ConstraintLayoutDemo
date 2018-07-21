@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#d35756</color>
+    <color name="colorPrimaryDark">#ce403f</color>
+    <color name="colorAccent">#d54c4b</color>
+
+    <!--100%    FF-->
+    <!--95% 	F2-->
+    <!--90% 	E6-->
+    <!--85% 	D9-->
+    <!--80% 	CC-->
+    <!--75%	    BF-->
+    <!--70% 	B3-->
+    <!--65% 	A6-->
+    <!--60% 	99-->
+    <!--55% 	8C-->
+    <!--50% 	80-->
+    <!--45% 	73-->
+    <!--40% 	66-->
+    <!--35% 	59-->
+    <!--30% 	4D-->
+    <!--25% 	40-->
+    <!--20% 	33-->
+    <!--15% 	26-->
+    <!--10% 	1A-->
+    <!--5%  	0D-->
+    <!--0%  	00-->
+
+    <color name="black">#000000</color>
+
+    <!--口袋妖怪属性颜色-->
+    <color name="flight">#6699FF</color>
+    <color name="fire">#FF4422</color>
+
+    <color name="bg_fire">#FF927D</color>
+
+    <color name="hp">#12FB58</color>
+    <color name="attack">#FFF60C</color>
+    <color name="defense">#FF8701</color>
+    <color name="s_attack">#14F1F6</color>
+    <color name="s_defense">#0D50FC</color>
+    <color name="speed">#E608FB</color>
+</resources>
