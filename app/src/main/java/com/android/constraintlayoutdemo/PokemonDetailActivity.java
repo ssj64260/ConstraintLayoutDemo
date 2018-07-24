@@ -67,7 +67,7 @@ public class PokemonDetailActivity extends BaseActivity {
             @Override
             public void run() {
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(200);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -75,7 +75,7 @@ public class PokemonDetailActivity extends BaseActivity {
                 loadNameAndPicture();
 
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -83,7 +83,7 @@ public class PokemonDetailActivity extends BaseActivity {
                 loadAbilityAndProperty();
 
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(300);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
