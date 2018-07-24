@@ -1,26 +1,14 @@
 package com.android.constraintlayoutdemo;
 
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.ViewStub;
-
-import java.util.List;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.view.MenuItem;
+import android.widget.TextView;
 
 public class MainActivity extends BaseActivity {
 
-    private ViewStub viewstubNameAndPicture;
-    private ViewStub viewstubAbilityAndProperty;
-    private ViewStub viewstubAttribute;
-
-    private RecyclerView rvAttributeList;
-
-    private List<Attribute> mAttributeList;
-    private AttributeListAdapter mAttributeAdapter;
-
-    private Handler mHandler;
+    private TextView mTextMessage;
 
     @Override
     protected int getContentView() {
@@ -28,94 +16,37 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        mHandler.removeCallbacksAndMessages(null);
-    }
-
-    @Override
     protected void initData() {
         super.initData();
-        mHandler = new Handler(Looper.getMainLooper());
-
-        mAttributeList = Attribute.createList();
-        mAttributeAdapter = new AttributeListAdapter(this, mAttributeList);
     }
 
     @Override
     protected void initView(Bundle savedInstanceState) {
         super.initView(savedInstanceState);
-        setToolbarTitle(R.string.app_name);
 
-        viewstubNameAndPicture = findViewById(R.id.viewstub_name_and_picture);
-        viewstubAbilityAndProperty = findViewById(R.id.viewstub_ability_and_property);
-        viewstubAttribute = findViewById(R.id.viewstub_attribute);
-
-        loadView();
+        mTextMessage = findViewById(R.id.message);
+        BottomNavigationView navigation = findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
-    private void loadView() {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
-                loadNameAndPicture();
-
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
-                loadAbilityAndProperty();
-
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
-                loadEthnicValue();
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.navigation_home:
+                    mTextMessage.setText(R.string.title_home);
+                    PokemonDetailActivity.show(MainActivity.this);
+                    return true;
+                case R.id.navigation_dashboard:
+                    mTextMessage.setText(R.string.title_dashboard);
+                    return true;
+                case R.id.navigation_notifications:
+                    mTextMessage.setText(R.string.title_notifications);
+                    return true;
             }
-        }).start();
-    }
-
-    private void loadNameAndPicture() {
-        mHandler.post(new Runnable() {
-            @Override
-            public void run() {
-                viewstubNameAndPicture.inflate();
-            }
-        });
-    }
-
-    private void loadAbilityAndProperty() {
-        mHandler.post(new Runnable() {
-            @Override
-            public void run() {
-                viewstubAbilityAndProperty.inflate();
-            }
-        });
-    }
-
-    private void loadEthnicValue() {
-        mHandler.post(new Runnable() {
-            @Override
-            public void run() {
-                viewstubAttribute.inflate();
-
-                rvAttributeList = findViewById(R.id.rv_attribute_list);
-                rvAttributeList.setLayoutManager(new LinearLayoutManager(MainActivity.this));
-                rvAttributeList.setFocusable(false);
-                rvAttributeList.setNestedScrollingEnabled(false);
-                rvAttributeList.setHasFixedSize(true);
-                rvAttributeList.setAdapter(mAttributeAdapter);
-            }
-        });
-    }
+            return false;
+        }
+    };
 }

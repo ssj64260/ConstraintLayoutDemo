@@ -7,8 +7,8 @@ import android.os.Bundle;
 public class MyActivityLifecycleCallbacks implements Application.ActivityLifecycleCallbacks {
     @Override
     public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
-        if (activity instanceof MainActivity) {
-            ToastMaster.toast("MainActivity - onCreate");
+        if (activity instanceof PokemonDetailActivity) {
+            ToastMaster.toast("PokemonDetailActivity - onCreate");
         }
     }
 
