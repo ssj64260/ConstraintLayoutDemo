@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/view_ability"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/shape_bg_fire_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_ability_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="@string/text_pokemon_ability"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/view_ability"
+        app:layout_constraintStart_toStartOf="@+id/view_ability"
+        app:layout_constraintTop_toTopOf="@+id/view_ability" />
+
+    <TextView
+        android:id="@+id/tv_first_ability"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/shape_bg_content_white"
+        android:gravity="center"
+        android:text="猛火"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_secend_ability"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@+id/view_ability"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ability_tips" />
+
+    <TextView
+        android:id="@+id/tv_secend_ability"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/shape_bg_content_white"
+        android:gravity="center"
+        android:text="火焰身躯"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/view_third_ability"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/tv_first_ability"
+        app:layout_constraintTop_toTopOf="@+id/tv_first_ability" />
+
+    <View
+        android:id="@+id/view_third_ability"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/shape_bg_content_white"
+        app:layout_constraintEnd_toEndOf="@+id/view_ability"
+        app:layout_constraintStart_toEndOf="@+id/tv_secend_ability"
+        app:layout_constraintTop_toTopOf="@+id/tv_secend_ability" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal|bottom"
+        android:text="@string/text_special_ability"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/view_third_ability"
+        app:layout_constraintStart_toStartOf="@+id/view_third_ability"
+        app:layout_constraintTop_toTopOf="@+id/view_third_ability" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:text="太阳力量"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view_third_ability"
+        app:layout_constraintEnd_toEndOf="@+id/view_third_ability"
+        app:layout_constraintStart_toStartOf="@+id/view_third_ability" />
+
+    <View
+        android:id="@+id/view_property"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/shape_bg_fire_light"
+        app:layout_constraintEnd_toStartOf="@+id/view_ethnic_value"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_ability" />
+
+    <TextView
+        android:id="@+id/tv_property_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="@string/text_pokemon_property"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/view_property"
+        app:layout_constraintStart_toStartOf="@+id/view_property"
+        app:layout_constraintTop_toTopOf="@+id/view_property" />
+
+    <View
+        android:id="@+id/view_property_background"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/shape_bg_content_white"
+        app:layout_constraintEnd_toEndOf="@+id/view_property"
+        app:layout_constraintStart_toStartOf="@+id/view_property"
+        app:layout_constraintTop_toBottomOf="@+id/tv_property_tips" />
+
+    <TextView
+        android:id="@+id/tv_first_property"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/shape_bg_fire"
+        android:gravity="center"
+        android:minWidth="50dp"
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        android:text="火"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_secend_property"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@+id/view_property_background"
+        app:layout_constraintTop_toTopOf="@+id/view_property_background" />
+
+    <TextView
+        android:id="@+id/tv_secend_property"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/shape_bg_flight"
+        android:gravity="center"
+        android:minWidth="50dp"
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        android:text="飞行"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/view_property_background"
+        app:layout_constraintStart_toEndOf="@+id/tv_first_property"
+        app:layout_constraintTop_toTopOf="@+id/tv_first_property" />
+
+    <View
+        android:id="@+id/view_ethnic_value"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/shape_bg_fire_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/view_property"
+        app:layout_constraintTop_toTopOf="@+id/view_property" />
+
+    <TextView
+        android:id="@+id/tv_ethnic_value_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="@string/text_pokemon_race_value"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/view_ethnic_value"
+        app:layout_constraintStart_toStartOf="@+id/view_ethnic_value"
+        app:layout_constraintTop_toTopOf="@+id/view_ethnic_value" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/shape_bg_content_white"
+        android:gravity="center"
+        android:text="534"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/view_ethnic_value"
+        app:layout_constraintStart_toStartOf="@+id/view_ethnic_value"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ethnic_value_tips" />
+
+</android.support.constraint.ConstraintLayout>

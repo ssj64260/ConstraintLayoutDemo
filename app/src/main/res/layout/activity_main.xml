@@ -15,316 +15,40 @@
         android:background="@color/fire"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <android.support.constraint.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context=".MainActivity">
+            android:orientation="vertical">
 
-            <View
-                android:id="@+id/view_name"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/shape_bg_content_white"
-                android:gravity="center"
-                app:layout_constraintEnd_toStartOf="@+id/tv_id"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/tv_cn_name"
-                android:layout_width="wrap_content"
+            <ViewStub
+                android:id="@+id/viewstub_name_and_picture"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="5dp"
-                android:gravity="center"
-                android:text="喷火龙"
-                android:textColor="@android:color/black"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/view_name"
-                app:layout_constraintStart_toStartOf="@+id/view_name"
-                app:layout_constraintTop_toTopOf="@+id/view_name" />
+                android:layout="@layout/layout_name_and_picture" />
 
-            <TextView
-                android:layout_width="wrap_content"
+            <ViewStub
+                android:id="@+id/viewstub_ability_and_property"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
                 android:layout_marginTop="5dp"
-                android:gravity="center"
-                android:text="リザードン Charizard"
-                android:textColor="@android:color/black"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="@+id/view_name"
-                app:layout_constraintStart_toStartOf="@+id/view_name"
-                app:layout_constraintTop_toBottomOf="@+id/tv_cn_name" />
+                android:layout="@layout/layout_ability_and_property" />
 
-            <TextView
-                android:id="@+id/tv_id"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/shape_bg_content_white"
-                android:gravity="center"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp"
-                android:text="#006"
-                android:textColor="@android:color/black"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/iv_picture"
-                android:layout_width="0dp"
-                android:layout_height="200dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/shape_bg_content_white"
-                android:scaleType="fitCenter"
-                android:src="@drawable/bg_ditto"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view_name" />
-
-            <View
-                android:id="@+id/view_ability"
-                android:layout_width="0dp"
-                android:layout_height="90dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/shape_bg_fire_light"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/iv_picture" />
-
-            <TextView
-                android:id="@+id/tv_ability_tips"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="5dp"
-                android:gravity="center"
-                android:text="@string/text_pokemon_ability"
-                android:textColor="@android:color/black"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="@+id/view_ability"
-                app:layout_constraintStart_toStartOf="@+id/view_ability"
-                app:layout_constraintTop_toTopOf="@+id/view_ability" />
-
-            <TextView
-                android:id="@+id/tv_first_ability"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="5dp"
-                android:background="@drawable/shape_bg_content_white"
-                android:gravity="center"
-                android:text="猛火"
-                android:textColor="@android:color/black"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toStartOf="@+id/tv_secend_ability"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintStart_toStartOf="@+id/view_ability"
-                app:layout_constraintTop_toBottomOf="@+id/tv_ability_tips" />
-
-            <TextView
-                android:id="@+id/tv_secend_ability"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="5dp"
-                android:background="@drawable/shape_bg_content_white"
-                android:gravity="center"
-                android:text="火焰身躯"
-                android:textColor="@android:color/black"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toStartOf="@+id/view_third_ability"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintStart_toEndOf="@+id/tv_first_ability"
-                app:layout_constraintTop_toTopOf="@+id/tv_first_ability" />
-
-            <View
-                android:id="@+id/view_third_ability"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginStart="5dp"
-                android:background="@drawable/shape_bg_content_white"
-                app:layout_constraintEnd_toEndOf="@+id/view_ability"
-                app:layout_constraintStart_toEndOf="@+id/tv_secend_ability"
-                app:layout_constraintTop_toTopOf="@+id/tv_secend_ability" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginTop="5dp"
-                android:gravity="center_horizontal|bottom"
-                android:text="@string/text_special_ability"
-                android:textColor="@android:color/black"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="@+id/view_third_ability"
-                app:layout_constraintStart_toStartOf="@+id/view_third_ability"
-                app:layout_constraintTop_toTopOf="@+id/view_third_ability" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginBottom="5dp"
-                android:gravity="center"
-                android:text="太阳力量"
-                android:textColor="@android:color/black"
-                android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="@+id/view_third_ability"
-                app:layout_constraintEnd_toEndOf="@+id/view_third_ability"
-                app:layout_constraintStart_toStartOf="@+id/view_third_ability" />
-
-            <View
-                android:id="@+id/view_property"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/shape_bg_fire_light"
-                app:layout_constraintEnd_toStartOf="@+id/view_ethnic_value"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view_ability" />
-
-            <TextView
-                android:id="@+id/tv_property_tips"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginTop="5dp"
-                android:gravity="center"
-                android:text="@string/text_pokemon_property"
-                android:textColor="@android:color/black"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="@+id/view_property"
-                app:layout_constraintStart_toStartOf="@+id/view_property"
-                app:layout_constraintTop_toTopOf="@+id/view_property" />
-
-            <View
-                android:id="@+id/view_property_background"
-                android:layout_width="0dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginStart="5dp"
-                android:background="@drawable/shape_bg_content_white"
-                app:layout_constraintEnd_toEndOf="@+id/view_property"
-                app:layout_constraintStart_toStartOf="@+id/view_property"
-                app:layout_constraintTop_toBottomOf="@+id/tv_property_tips" />
-
-            <TextView
-                android:id="@+id/tv_first_property"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/shape_bg_fire"
-                android:gravity="center"
-                android:minWidth="50dp"
-                android:paddingEnd="5dp"
-                android:paddingStart="5dp"
-                android:text="火"
-                android:textColor="@android:color/white"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toStartOf="@+id/tv_secend_property"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintStart_toStartOf="@+id/view_property_background"
-                app:layout_constraintTop_toTopOf="@+id/view_property_background" />
-
-            <TextView
-                android:id="@+id/tv_secend_property"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginStart="5dp"
-                android:background="@drawable/shape_bg_flight"
-                android:gravity="center"
-                android:minWidth="50dp"
-                android:paddingEnd="5dp"
-                android:paddingStart="5dp"
-                android:text="飞行"
-                android:textColor="@android:color/white"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="@+id/view_property_background"
-                app:layout_constraintStart_toEndOf="@+id/tv_first_property"
-                app:layout_constraintTop_toTopOf="@+id/tv_first_property" />
-
-            <View
-                android:id="@+id/view_ethnic_value"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="5dp"
-                android:background="@drawable/shape_bg_fire_light"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/view_property"
-                app:layout_constraintTop_toTopOf="@+id/view_property" />
-
-            <TextView
-                android:id="@+id/tv_ethnic_value_tips"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginTop="5dp"
-                android:gravity="center"
-                android:text="@string/text_pokemon_race_value"
-                android:textColor="@android:color/black"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="@+id/view_ethnic_value"
-                app:layout_constraintStart_toStartOf="@+id/view_ethnic_value"
-                app:layout_constraintTop_toTopOf="@+id/view_ethnic_value" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginStart="5dp"
-                android:background="@drawable/shape_bg_content_white"
-                android:gravity="center"
-                android:text="534"
-                android:textColor="@android:color/black"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="@+id/view_ethnic_value"
-                app:layout_constraintStart_toStartOf="@+id/view_ethnic_value"
-                app:layout_constraintTop_toBottomOf="@+id/tv_ethnic_value_tips" />
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/rv_attribute_list"
-                android:layout_width="0dp"
+            <ViewStub
+                android:id="@+id/viewstub_attribute"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/shape_bg_fire_light"
-                android:padding="5dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.192"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view_ethnic_value" />
+                android:layout_margin="5dp"
+                android:layout="@layout/layout_attribute" />
 
             <Button
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginBottom="4dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
                 android:background="@drawable/shape_bg_content_white"
-                android:text="详细信息"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rv_attribute_list" />
-
-        </android.support.constraint.ConstraintLayout>
+                android:text="详细信息" />
+        </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
 
